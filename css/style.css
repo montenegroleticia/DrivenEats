@@ -6,19 +6,19 @@ body {
 }
 
 /* Barra superior */
-nav {
+main {
     background-color: #CF2B2B;
     width: 100%;
     height: 92px;
     position: fixed;
     z-index: 1;
 }
-.nav-titulo {
+.main-titulo {
     color: #FFFFFF;
     margin-left: 21px;
     margin-top: 8px;
 }
-.nav-titulo h1 {
+.main-titulo h1 {
     font-family: 'Righteous';
     font-style: normal;
     font-weight: 400;
@@ -26,7 +26,7 @@ nav {
     line-height: 55px;
     letter-spacing: -0.012em;
 }
-.nav-titulo p {
+.main-titulo p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
