@@ -1,12 +1,9 @@
 //Selecionar as comidas
 function selecionarPrato(selecionadoPrato){
-    
     const opcaoSelecionada = document.querySelector('.prato .article-selecionado');
-
     if (opcaoSelecionada !== null){
         opcaoSelecionada.classList.remove('article-selecionado')
     }
-
     const articleSelecionado = document.querySelector(selecionadoPrato);
     articleSelecionado.classList.add('article-selecionado');
 }

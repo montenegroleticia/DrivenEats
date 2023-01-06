@@ -149,3 +149,107 @@ button p {
 .selecionado {
     background-color: #32B72F;
 }
+
+/* Tela escondida do pedido */
+.transparente {
+    background: rgba(255, 255, 255, 0.9);
+    width: 100vh;
+    height: 100vh;
+    position: absolute;
+    top:0;
+}
+.painel {
+    background: #50D074;
+    width: 377px;
+    height: 353px;
+    border-radius: 9px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    top: calc(50% - 353px/2 - 0.5px);
+    top: 336px;
+    left: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+}
+.painel-titulo {
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    margin-top: 21px;
+}
+.painel-opcoes {
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 13px;
+    margin-left: 19px;
+    margin-right: 18px;
+}
+.painel-opcoes p {
+    font-weight: 400;
+}
+.opcoes-prato {
+    display: flex;
+    justify-content: space-between;
+}
+.opcoes-bebida {
+    display: flex;
+    justify-content: space-between;
+}
+.opcoes-sobremesa {
+    display: flex;
+    justify-content: space-between;    
+}
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.total h3 {
+    font-weight: 700;
+}
+.total h2 {
+    font-weight: 700;
+}
+.painel-botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.botao-finalizarPedido {
+    width: 329px;
+    height: 52px;
+    color: #50D074;
+    background: #FFFFFF;
+    border-radius: 100px;
+    border: transparent;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+}
+.botao-cancelar {
+    width: 329px;
+    height: 52px;
+    color: #FFFFFF;
+    background-color: transparent;
+    border: transparent;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.018em;
+}
