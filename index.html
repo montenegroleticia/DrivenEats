@@ -18,20 +18,20 @@
         <div class="conteudo">
             <section>
                 <h2>Primeiro, seu prato</h2>
-                <div class="linha-article">
-                    <article>
+                <div class="linha-article prato">
+                    <article id="prato-opcao1" onclick="selecionarPrato('#prato-opcao1')">
                         <img src="/midia/frango_yin_yang.png" alt="Frango Yin Yang">
                             <h3>Frango Yin Yang</h3>
                             <p>Um pouco de batata, um pouco de salada.</p>
                             <h4>R$ 14,90</h4>
                     </article>
-                    <article>
+                    <article id="prato-opcao2" onclick="selecionarPrato('#prato-opcao2')">
                         <img src="/midia/frango_yin_yang.png" alt="Frango Yin Yang">
                             <h3>Frango Yin Yang</h3>
                             <p>Um pouco de batata, um pouco de salada.</p>
                             <h4>R$ 14,90</h4>
                     </article>
-                    <article>
+                    <article id="prato-opcao3" onclick="selecionarPrato('#prato-opcao3')">
                         <img src="/midia/frango_yin_yang.png" alt="Frango Yin Yang">
                             <h3>Frango Yin Yang</h3>
                             <p>Um pouco de batata, um pouco de salada.</p>
@@ -41,20 +41,20 @@
             </section>
             <section>
                 <h2>Agora, sua bebida</h2>
-                <div class="linha-article">
-                    <article>
+                <div class="linha-article bebida">
+                    <article onclick="selecionarBebida(this)">
                         <img src="/midia/coca-cola.png" alt="Coquinha gelada">
                         <h3>Coquinha gelada</h3>
                         <p>Lata 350ml</p>
                         <h4>R$ 4,90</h4>
                     </article>
-                    <article>
+                    <article onclick="selecionarBebida(this)">
                         <img src="/midia/coca-cola.png" alt="Coquinha gelada">
                         <h3>Coquinha gelada</h3>
                         <p>Lata 350ml</p>
                         <h4>R$ 4,90</h4>
                     </article>
-                    <article>
+                    <article onclick="selecionarBebida(this)">
                         <img src="/midia/coca-cola.png" alt="Coquinha gelada">
                         <h3>Coquinha gelada</h3>
                         <p>Lata 350ml</p>
@@ -64,20 +64,20 @@
             </section>
             <section>
                 <h2>Por fim, sua sobremesa</h2>
-                <div class="linha-article">
-                    <article>
+                <div class="linha-article sobremesa" >
+                    <article onclick="selecionarSobremesa(this)">
                         <img src="/midia/pudim.png" alt="Pudim">
                         <h3>Pudim</h3>
                         <p>Apenas pudim</p>
                         <h4>R$ 7,90</h4>
                     </article>
-                    <article>
+                    <article onclick="selecionarSobremesa(this)">
                         <img src="/midia/pudim.png" alt="Pudim">
                         <h3>Pudim</h3>
                         <p>Apenas pudim</p>
                         <h4>R$ 7,90</h4>
                     </article>
-                    <article>
+                    <article onclick="selecionarSobremesa(this)">
                         <img src="/midia/pudim.png" alt="Pudim">
                         <h3>Pudim</h3>
                         <p>Apenas pudim</p>
