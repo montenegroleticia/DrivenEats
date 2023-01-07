@@ -11,7 +11,7 @@
     <body>
         <!--Barra superior-->
         <main>
-            <div class="transparente"></div>
+            <div class="transparente escondido"></div>
             <div class="main-titulo">
                 <h1>DrivenEats</h1>
                 <p>Sua comida em 6 minutos</p>  
@@ -26,19 +26,28 @@
                         <img src="/midia/frango_yin_yang.png" alt="Frango Yin Yang">
                             <h3>Frango Yin Yang</h3>
                             <p>Um pouco de batata, um pouco de salada.</p>
-                            <h4>R$ 14,90</h4>
+                            <div class="preco">
+                                <h4>R$ 14,90</h4>
+                                <ion-icon class="" name="checkmark-circle"></ion-icon>
+                            </div>
                     </article>
                     <article id="prato-opcao2" onclick="selecionarPrato('#prato-opcao2')">
                         <img src="/midia/frango_yin_yang.png" alt="Frango Yin Yang">
                             <h3>Frango Yin Yang</h3>
                             <p>Um pouco de batata, um pouco de salada.</p>
-                            <h4>R$ 14,90</h4>
+                            <div class="preco">
+                                <h4>R$ 14,90</h4>
+                                <ion-icon class="" name="checkmark-circle"></ion-icon>
+                            </div>
                     </article>
                     <article id="prato-opcao3" onclick="selecionarPrato('#prato-opcao3')">
                         <img src="/midia/frango_yin_yang.png" alt="Frango Yin Yang">
                             <h3>Frango Yin Yang</h3>
                             <p>Um pouco de batata, um pouco de salada.</p>
-                            <h4>R$ 14,90</h4>
+                            <div class="preco">
+                                <h4>R$ 14,90</h4>
+                                <ion-icon class="" name="checkmark-circle"></ion-icon>
+                            </div>
                     </article>
                 </div>
             </section>
@@ -90,13 +99,13 @@
             </section>
         <!--Barra inferior-->
         <footer>
-            <button data-test="order-btn" disabled>
+            <button data-test="order-btn" onclick="ativarBotao()" disabled>
                     <p>Selecione os 3 itens para fechar o pedido</p>
             </button>
         </footer>
         </div>
         <!--Painel escondido-->
-        <div class="painel">
+        <div class="painel escondido" >
         <div class="conteudo-painel">
             <div class="painel-titulo">
                 <h3>Confirme o seu pedido</h3>
@@ -109,10 +118,11 @@
             </div>
             <div class="painel-botoes">
                 <button class="botao-finalizarPedido">Tudo certo, pode pedir!</button>
-                <button class="botao-cancelar">Cancelar</button>
+                <button class="botao-cancelar" onclick="cancelar()">Cancelar</button>
             </div>
         </div>
         </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
         <script src="/script.js"></script>
     </body>
 </html>
