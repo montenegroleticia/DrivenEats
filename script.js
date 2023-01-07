@@ -28,3 +28,8 @@ function selecionarSobremesa(sobremesaThis){
 /*
 const paragrafo = document.querySelector("button");
 paragrafo.innerHTML = "Fechar pedido" */
+
+//Botão cancelar
+function cancelar(){
+    
+}
