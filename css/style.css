@@ -119,10 +119,10 @@ ion-icon {
     color: #32B72F;
     font-size: 20px;
     margin-right: 16px;
-    display: none;
+    opacity: 0;
 }
 .verde {
-    display: block;
+    opacity: 1;
 }
 
 /* Barra inferior */

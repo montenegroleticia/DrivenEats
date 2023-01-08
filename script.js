@@ -1,47 +1,68 @@
 //Selecionar as comidas
 let prato;
 
-function selecionarPrato(selecionadoPrato){
+function selecionarPrato(pratoThis, icone){
+    //selecionar bordas
     const opcaoSelecionada = document.querySelector('.prato .article-selecionado');
     if (opcaoSelecionada !== null){
         opcaoSelecionada.classList.remove('article-selecionado')
     }
-    const articleSelecionado = document.querySelector(selecionadoPrato);
-    articleSelecionado.classList.add('article-selecionado');
-
-    prato = articleSelecionado.innerHTML;
+    pratoThis.classList.toggle('article-selecionado');
+    //selecionar icone
+    const iconeSelecionado = document.querySelector('.prato .verde');
+    if (iconeSelecionado !== null){
+        iconeSelecionado.classList.remove('verde')
+    }
+    const inconeNovo = document.querySelector(icone);
+    inconeNovo.classList.add('verde');
+    //Validar botão fechar pedido
+    prato = pratoThis.innerHTML;
     verificarSelecao();
 }
 
 let bebida;
 
-function selecionarBebida(bebidaThis) {
-    const selecionadoAntes = document.querySelector('.bebida .article-selecionado');
-    if (selecionadoAntes !== null){
-        selecionadoAntes.classList.remove('article-selecionado');
+function selecionarBebida(bebidaThis, icone) {
+    //selecionar bordas
+    const opcaoSelecionada = document.querySelector('.bebida .article-selecionado');
+    if (opcaoSelecionada !== null){
+        opcaoSelecionada.classList.remove('article-selecionado');
     }
     bebidaThis.classList.toggle('article-selecionado');
-
+    //selecionar icone
+    const iconeSelecionado = document.querySelector('.bebida .verde');
+    if (iconeSelecionado !== null){
+        iconeSelecionado.classList.remove('verde');
+    }
+    const iconeNovo = document.querySelector(icone);
+    iconeNovo.classList.toggle('verde');
+    //Validar botão fechar pedido
     bebida = bebidaThis.innerHTML;
     verificarSelecao();
 }
 
 let sobremesa;
 
-function selecionarSobremesa(sobremesaThis){
-    const selecionadoAnteriormente = document.querySelector('.sobremesa .article-selecionado');
-    if (selecionadoAnteriormente !== null){
-        selecionadoAnteriormente.classList.remove('article-selecionado');
+function selecionarSobremesa(sobremesaThis, icone){
+    //selecionar bordas
+    const opcaoSelecionada = document.querySelector('.sobremesa .article-selecionado');
+    if (opcaoSelecionada !== null){
+        opcaoSelecionada.classList.remove('article-selecionado');
     }
     sobremesaThis.classList.toggle('article-selecionado');
-
+    //selecionar icone
+    const iconeSelecionado = document.querySelector('.sobremesa .verde');
+    if (iconeSelecionado !== null){
+        iconeSelecionado.classList.remove('verde');
+    }
+    const iconeNovo = document.querySelector(icone);
+    iconeNovo.classList.toggle('verde');
+    //Validar botão fechar pedido
     sobremesa = sobremesaThis.innerHTML;
     verificarSelecao();
 }
 
-document.querySelector("ion-icon").classList.add('verde');
-
-//verifica se as opções foram selecionadas
+//verifica se as opções foram selecionadas e habilitar botão
 function verificarSelecao(){
     if (prato !== undefined){
         if (bebida !== undefined){
@@ -55,7 +76,7 @@ function verificarSelecao(){
     }
 }
 
-//Mudança no botão
+//Aparecer painel
 function ativarBotao(){
     document.querySelector('.painel').classList.remove('escondido');
     document.querySelector('.transparente').classList.remove('escondido');
@@ -67,9 +88,10 @@ function cancelar(){
     document.querySelector('.transparente').classList.add('escondido');
 }
 
-/*
-const paragrafo = document.querySelector("");
-    if (){
-        document.querySelector('button p').classList.add('selecionado');
-        paragrafo.innerHTML = "Fechar pedido";
-        */
+// Botão tudo certo, pode pedir!
+function pedir(){
+    const nome = prompt('Qual o seu nome?');
+    const endereco = prompt('Qual o seu endereço');
+    const link = "https://wa.me/5583998647840";
+    document.querySelector('a').href = link;
+}
