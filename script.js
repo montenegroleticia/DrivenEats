@@ -1,18 +1,23 @@
 //Selecionar as comidas
 let selecao01 = '';
+let selecao02 = '';
+let selecao03 = '';
 let preco01 = 0;
+let preco02 = 0;
+let preco03 = 0;
 let total = 0;
+//Selecionar prato
 function selecionarPrato(pratoThis, icone){
     //selecionar bordas
     const opcaoSelecionada = document.querySelector('.prato .article-selecionado');
     if (opcaoSelecionada !== null){
-        opcaoSelecionada.classList.remove('article-selecionado')
+        opcaoSelecionada.classList.remove('article-selecionado');
     }
     pratoThis.classList.toggle('article-selecionado');
     //selecionar icone
     const iconeSelecionado = document.querySelector('.prato .verde');
     if (iconeSelecionado !== null){
-        iconeSelecionado.classList.remove('verde')
+        iconeSelecionado.classList.remove('verde');
     }
     const inconeNovo = document.querySelector(icone);
     inconeNovo.classList.add('verde');
@@ -21,9 +26,7 @@ function selecionarPrato(pratoThis, icone){
     selecao01 = pratoThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
-
-let selecao02 = '';
-let preco02 = 0;
+//Selecionar bebida
 function selecionarBebida(bebidaThis, icone) {
     //selecionar bordas
     const opcaoSelecionada = document.querySelector('.bebida .article-selecionado');
@@ -43,9 +46,7 @@ function selecionarBebida(bebidaThis, icone) {
     selecao02 = bebidaThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
-
-let selecao03 = '';
-let preco03 = 0;
+//Selecionar sobremesa
 function selecionarSobremesa(sobremesaThis, icone){
     //selecionar bordas
     const opcaoSelecionada = document.querySelector('.sobremesa .article-selecionado');
@@ -65,7 +66,6 @@ function selecionarSobremesa(sobremesaThis, icone){
     selecao03 = sobremesaThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
-
 //verifica se as opções foram selecionadas e habilitar botão
 function verificarSelecao(){
     if (selecao01 !== '' && selecao02 !== '' && selecao03 !== ''){
@@ -95,13 +95,11 @@ function ativarBotao(){
     document.querySelector('.painel').classList.remove('escondido');
     document.querySelector('.transparente').classList.remove('escondido');
 }
-
 //Botão cancelar
 function cancelar(){
     document.querySelector('.painel').classList.add('escondido');
     document.querySelector('.transparente').classList.add('escondido');
 }
-
 // Botão tudo certo, pode pedir!
 function pedir(){
     const link = "https://wa.me/5583999999999?text=";

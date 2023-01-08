@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/reset.css">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="shortcut icon" href="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f354.svg" />
 
         <title>DrivenEats</title>
     </head>
     <body>
-        <!--Barra superior-->
+        <!-- Barra superior -->
         <main>
             <div class="transparente escondido"></div>
             <div class="main-titulo">
@@ -17,7 +18,7 @@
                 <p>Sua comida em 6 minutos</p>  
             </div>
         </main>
-        <!--Conteúdo da página-->
+        <!-- Conteúdo da página -->
         <div class="conteudo">
             <section>
                 <h2>Primeiro, seu prato</h2>
@@ -115,14 +116,14 @@
                     </article>
                 </div>
             </section>
-        <!--Barra inferior-->
+        <!-- Barra inferior -->
         <footer>
             <button data-test="order-btn" onclick="ativarBotao()" disabled>
                     <p>Selecione os 3 itens para fechar o pedido</p>
             </button>
         </footer>
         </div>
-        <!--Painel escondido-->
+        <!-- Painel escondido -->
         <div class="painel escondido" data-test="confirm-order-modal">
         <div class="conteudo-painel">
             <div class="painel-titulo">
@@ -135,7 +136,9 @@
                 <div class="total"><h3>TOTAL</h3><h2>R$ 27,70</h2></div>
             </div>
             <div class="painel-botoes">
-                <a target="_blank" ><button data-test="confirm-order-btn" class="botao-finalizarPedido" onclick="pedir()">Tudo certo, pode pedir!</button></a>
+                <a target="_blank" >
+                    <button data-test="confirm-order-btn" class="botao-finalizarPedido" onclick="pedir()">Tudo certo, pode pedir!</button>
+                </a>
                 <button data-test="cancel-order-btn" class="botao-cancelar" onclick="cancelar()">Cancelar</button>
             </div>
         </div>
