@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+html {
+    -webkit-tap-highlight-color: transparent;
+}
 body {
     font-family: 'Righteous', cursive;
     font-family: 'Roboto', sans-serif;
@@ -66,6 +68,9 @@ section h2 {
     overflow-x: scroll;
     display: flex;
 }
+.linha-article::-webkit-scrollbar{
+    display: none;
+}
 article {
     background-color: #FFFFFF;
     border-radius: 9px;
@@ -79,6 +84,9 @@ article {
 }
 article img {
     margin: 18px 14px 0 14px ;
+    width: 144px;
+    height: 87px;
+    border-radius: 4px;
 }
 article h3 {
     margin-top: 8px;

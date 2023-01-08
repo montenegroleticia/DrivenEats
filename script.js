@@ -1,6 +1,7 @@
 //Selecionar as comidas
-let prato;
-
+let selecao01 = '';
+let preco01 = 0;
+let total = 0;
 function selecionarPrato(pratoThis, icone){
     //selecionar bordas
     const opcaoSelecionada = document.querySelector('.prato .article-selecionado');
@@ -15,13 +16,14 @@ function selecionarPrato(pratoThis, icone){
     }
     const inconeNovo = document.querySelector(icone);
     inconeNovo.classList.add('verde');
+    preco01 = pratoThis.querySelector('.preco > h4').innerHTML;
     //Validar botão fechar pedido
-    prato = pratoThis.innerHTML;
+    selecao01 = pratoThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
 
-let bebida;
-
+let selecao02 = '';
+let preco02 = 0;
 function selecionarBebida(bebidaThis, icone) {
     //selecionar bordas
     const opcaoSelecionada = document.querySelector('.bebida .article-selecionado');
@@ -36,13 +38,14 @@ function selecionarBebida(bebidaThis, icone) {
     }
     const iconeNovo = document.querySelector(icone);
     iconeNovo.classList.toggle('verde');
+    preco02 = bebidaThis.querySelector('.preco > h4').innerHTML;
     //Validar botão fechar pedido
-    bebida = bebidaThis.innerHTML;
+    selecao02 = bebidaThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
 
-let sobremesa;
-
+let selecao03 = '';
+let preco03 = 0;
 function selecionarSobremesa(sobremesaThis, icone){
     //selecionar bordas
     const opcaoSelecionada = document.querySelector('.sobremesa .article-selecionado');
@@ -57,27 +60,38 @@ function selecionarSobremesa(sobremesaThis, icone){
     }
     const iconeNovo = document.querySelector(icone);
     iconeNovo.classList.toggle('verde');
+    preco03 = sobremesaThis.querySelector('.preco > h4').innerHTML;
     //Validar botão fechar pedido
-    sobremesa = sobremesaThis.innerHTML;
+    selecao03 = sobremesaThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
 
 //verifica se as opções foram selecionadas e habilitar botão
 function verificarSelecao(){
-    if (prato !== undefined){
-        if (bebida !== undefined){
-            if (sobremesa !== undefined){
-                document.querySelector('button').disabled = false;
-                document.querySelector('button').classList.add('selecionado');
-                document.querySelector('button p').classList.add('botao-p-peso');
-                document.querySelector('button p').innerHTML = "Fechar pedido";
-            }
-        }
+    if (selecao01 !== '' && selecao02 !== '' && selecao03 !== ''){
+        const preco01Number = Number(preco01.replace('R$ ','').replace(',','.'));
+        const preco02Number = Number(preco02.replace('R$ ','').replace(',','.'));
+        const preco03Number = Number(preco03.replace('R$ ','').replace(',','.'));
+        total = preco01Number + preco02Number + preco03Number;
+        document.querySelector('.total h2').innerHTML = "R$ " + total.toFixed(2).replace('.',',');
+        document.querySelector('.opcoes-prato p').innerHTML = selecao01;
+        document.querySelector('.opcoes-bebida p').innerHTML = selecao02;
+        document.querySelector('.opcoes-sobremesa p').innerHTML = selecao03;
+        document.querySelector('.opcoes-prato h2').innerHTML = preco01.replace('R$ ','');
+        document.querySelector('.opcoes-bebida h2').innerHTML = preco02.replace('R$ ','');
+        document.querySelector('.opcoes-sobremesa h2').innerHTML = preco03.replace('R$ ','');
+        document.querySelector('button').disabled = false;
+        document.querySelector('button').classList.add('selecionado');
+        document.querySelector('button p').classList.add('botao-p-peso');
+        document.querySelector('button p').innerHTML = "Fechar pedido";
     }
 }
-
+let nome = '';
+let endereco = '';
 //Aparecer painel
 function ativarBotao(){
+    nome = prompt('Qual o seu nome?');
+    endereco = prompt('Qual o seu endereço');
     document.querySelector('.painel').classList.remove('escondido');
     document.querySelector('.transparente').classList.remove('escondido');
 }
@@ -90,8 +104,14 @@ function cancelar(){
 
 // Botão tudo certo, pode pedir!
 function pedir(){
-    const nome = prompt('Qual o seu nome?');
-    const endereco = prompt('Qual o seu endereço');
-    const link = "https://wa.me/5583998647840";
-    document.querySelector('a').href = link;
+    const link = "https://wa.me/5583999999999?text=";
+    const mensagem = encodeURIComponent(`Olá, gostaria de fazer o pedido:
+- Prato: ${selecao01}
+- Bebida: ${selecao02}
+- Sobremesa: ${selecao03}
+Total: R$ ${total.toFixed(2)}
+
+Nome: ${nome}
+Endereço: ${endereco}`);
+    document.querySelector('a').href = link + mensagem;
 }
