@@ -7,6 +7,7 @@ let preco02 = 0;
 let preco03 = 0;
 let total = 0;
 const articleSelecionado = 'article-selecionado';
+const precoSelecionado = '.preco > h4';
 // Selecionar prato
 function selecionarPrato(pratoThis, icone){
     //selecionar bordas
@@ -23,7 +24,7 @@ function selecionarPrato(pratoThis, icone){
     const inconeNovo = document.querySelector(icone);
     inconeNovo.classList.add('verde');
     //Validar botão fechar pedido
-    preco01 = pratoThis.querySelector('.preco > h4').innerHTML;
+    preco01 = pratoThis.querySelector(precoSelecionado).innerHTML;
     selecao01 = pratoThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
@@ -43,7 +44,7 @@ function selecionarBebida(bebidaThis, icone) {
     const iconeNovo = document.querySelector(icone);
     iconeNovo.classList.toggle('verde');
     //Validar botão fechar pedido
-    preco02 = bebidaThis.querySelector('.preco > h4').innerHTML;
+    preco02 = bebidaThis.querySelector(precoSelecionado).innerHTML;
     selecao02 = bebidaThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
@@ -63,7 +64,7 @@ function selecionarSobremesa(sobremesaThis, icone){
     const iconeNovo = document.querySelector(icone);
     iconeNovo.classList.toggle('verde');
     //Validar botão fechar pedido
-    preco03 = sobremesaThis.querySelector('.preco > h4').innerHTML;
+    preco03 = sobremesaThis.querySelector(precoSelecionado).innerHTML;
     selecao03 = sobremesaThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
