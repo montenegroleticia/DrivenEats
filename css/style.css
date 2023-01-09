@@ -5,7 +5,9 @@ body {
     background-color: #fafafa;
     box-sizing: border-box;
 }
-
+html {
+    -webkit-tap-highlight-color: transparent;
+}
 /* Barra superior */
 main {
     background-color: #CF2B2B;
