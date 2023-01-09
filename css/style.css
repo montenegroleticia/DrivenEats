@@ -26,7 +26,7 @@ main {
     margin-left: 21px;
     margin-top: 8px;
 }
-.main-titulo h1 {
+main h1 {
     font-family: 'Righteous', cursive;
     font-style: normal;
     font-weight: 400;
@@ -34,7 +34,7 @@ main {
     line-height: 55px;
     letter-spacing: -0.012em;
 }
-.main-titulo p {
+main p {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;

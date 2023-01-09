@@ -6,7 +6,7 @@ let preco01 = 0;
 let preco02 = 0;
 let preco03 = 0;
 let total = 0;
-let articleSelecionado = 'article-selecionado';
+const articleSelecionado = 'article-selecionado';
 // Selecionar prato
 function selecionarPrato(pratoThis, icone){
     //selecionar bordas
@@ -73,8 +73,9 @@ function verificarSelecao(){
         const preco01Number = Number(preco01.replace('R$ ','').replace(',','.'));
         const preco02Number = Number(preco02.replace('R$ ','').replace(',','.'));
         const preco03Number = Number(preco03.replace('R$ ','').replace(',','.'));
-        total = preco01Number + preco02Number + preco03Number;
-        document.querySelector('.total h2').innerHTML = "R$ " + total.toFixed(2).replace('.',',');
+        const magicaNumber = 2;
+        total = (preco01Number + preco02Number + preco03Number).toFixed(magicaNumber);
+        document.querySelector('.total h2').innerHTML = "R$ " + total.replace('.',',');
         document.querySelector('.opcoes-prato p').innerHTML = selecao01;
         document.querySelector('.opcoes-bebida p').innerHTML = selecao02;
         document.querySelector('.opcoes-sobremesa p').innerHTML = selecao03;
@@ -108,7 +109,7 @@ function pedir(){
 - Prato: ${selecao01}
 - Bebida: ${selecao02}
 - Sobremesa: ${selecao03}
-Total: R$ ${total.toFixed(2)}
+Total: R$ ${total}
 
 Nome: ${nome}
 Endereço: ${endereco}`);
