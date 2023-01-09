@@ -1,4 +1,4 @@
-//Selecionar as comidas
+// Selecionar as comidas
 let selecao01 = '';
 let selecao02 = '';
 let selecao03 = '';
@@ -6,14 +6,15 @@ let preco01 = 0;
 let preco02 = 0;
 let preco03 = 0;
 let total = 0;
-//Selecionar prato
+let articleSelecionado = 'article-selecionado';
+// Selecionar prato
 function selecionarPrato(pratoThis, icone){
     //selecionar bordas
     const opcaoSelecionada = document.querySelector('.prato .article-selecionado');
     if (opcaoSelecionada !== null){
-        opcaoSelecionada.classList.remove('article-selecionado');
+        opcaoSelecionada.classList.remove(articleSelecionado);
     }
-    pratoThis.classList.toggle('article-selecionado');
+    pratoThis.classList.toggle(articleSelecionado);
     //selecionar icone
     const iconeSelecionado = document.querySelector('.prato .verde');
     if (iconeSelecionado !== null){
@@ -21,19 +22,19 @@ function selecionarPrato(pratoThis, icone){
     }
     const inconeNovo = document.querySelector(icone);
     inconeNovo.classList.add('verde');
-    preco01 = pratoThis.querySelector('.preco > h4').innerHTML;
     //Validar botão fechar pedido
+    preco01 = pratoThis.querySelector('.preco > h4').innerHTML;
     selecao01 = pratoThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
-//Selecionar bebida
+// Selecionar bebida
 function selecionarBebida(bebidaThis, icone) {
     //selecionar bordas
     const opcaoSelecionada = document.querySelector('.bebida .article-selecionado');
     if (opcaoSelecionada !== null){
-        opcaoSelecionada.classList.remove('article-selecionado');
+        opcaoSelecionada.classList.remove(articleSelecionado);
     }
-    bebidaThis.classList.toggle('article-selecionado');
+    bebidaThis.classList.toggle(articleSelecionado);
     //selecionar icone
     const iconeSelecionado = document.querySelector('.bebida .verde');
     if (iconeSelecionado !== null){
@@ -41,19 +42,19 @@ function selecionarBebida(bebidaThis, icone) {
     }
     const iconeNovo = document.querySelector(icone);
     iconeNovo.classList.toggle('verde');
-    preco02 = bebidaThis.querySelector('.preco > h4').innerHTML;
     //Validar botão fechar pedido
+    preco02 = bebidaThis.querySelector('.preco > h4').innerHTML;
     selecao02 = bebidaThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
-//Selecionar sobremesa
+// Selecionar sobremesa
 function selecionarSobremesa(sobremesaThis, icone){
     //selecionar bordas
     const opcaoSelecionada = document.querySelector('.sobremesa .article-selecionado');
     if (opcaoSelecionada !== null){
-        opcaoSelecionada.classList.remove('article-selecionado');
+        opcaoSelecionada.classList.remove(articleSelecionado);
     }
-    sobremesaThis.classList.toggle('article-selecionado');
+    sobremesaThis.classList.toggle(articleSelecionado);
     //selecionar icone
     const iconeSelecionado = document.querySelector('.sobremesa .verde');
     if (iconeSelecionado !== null){
@@ -61,12 +62,12 @@ function selecionarSobremesa(sobremesaThis, icone){
     }
     const iconeNovo = document.querySelector(icone);
     iconeNovo.classList.toggle('verde');
-    preco03 = sobremesaThis.querySelector('.preco > h4').innerHTML;
     //Validar botão fechar pedido
+    preco03 = sobremesaThis.querySelector('.preco > h4').innerHTML;
     selecao03 = sobremesaThis.querySelector('h3').innerHTML;
     verificarSelecao();
 }
-//verifica se as opções foram selecionadas e habilitar botão
+// verifica se as opções foram selecionadas e habilitar botão
 function verificarSelecao(){
     if (selecao01 !== '' && selecao02 !== '' && selecao03 !== ''){
         const preco01Number = Number(preco01.replace('R$ ','').replace(',','.'));
@@ -86,16 +87,16 @@ function verificarSelecao(){
         document.querySelector('button p').innerHTML = "Fechar pedido";
     }
 }
+// Aparecer painel
 let nome = '';
 let endereco = '';
-//Aparecer painel
 function ativarBotao(){
     nome = prompt('Qual o seu nome?');
     endereco = prompt('Qual o seu endereço');
     document.querySelector('.painel').classList.remove('escondido');
     document.querySelector('.transparente').classList.remove('escondido');
 }
-//Botão cancelar
+// Botão cancelar
 function cancelar(){
     document.querySelector('.painel').classList.add('escondido');
     document.querySelector('.transparente').classList.add('escondido');
